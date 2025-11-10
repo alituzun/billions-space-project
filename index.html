@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Detector - Among Us Style</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 42px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #667eea; }
+            50% { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #764ba2; }
+        }
+
+        #gameCanvas {
+            border: 4px solid #fff;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            background: #000;
+            border-radius: 15px;
+            cursor: crosshair;
+        }
+
+        .info {
+            margin-top: 25px;
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 40px;
+            border-radius: 15px;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info h2 {
+            color: #ffd43b;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .control-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffd43b;
+        }
+
+        .control-item strong {
+            color: #ffd43b;
+        }
+
+        .tip {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,107,107,0.3);
+            border-radius: 10px;
+            border: 2px solid #ff6b6b;
+        }
+
+        .tip strong {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <h1>🕵️ AI DETECTOR 🤖</h1>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div class="info">
+        <h2>🎮 How to Play?</h2>
+        <div class="controls">
+            <div class="control-item">
+                <strong>⬆️⬇️⬅️➡️ / WASD:</strong> Move around
+            </div>
+            <div class="control-item">
+                <strong>💛 Yellow dots:</strong> Complete tasks
+            </div>
+            <div class="control-item">
+                <strong>🚨 MEETING / SPACE:</strong> Start meeting
+            </div>
+            <div class="control-item">
+                <strong>🗳️ Mouse:</strong> Click to vote
+            </div>
+        </div>
+        <div class="tip">
+            <strong>🎯 OBJECTIVE:</strong> There are 2 AIs in the group! Watch their behavior, pay attention to chat, and find the AIs!<br>
+            <strong>💡 TIP:</strong> AIs complete tasks very quickly and speak robotically. Read the chat carefully!
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
