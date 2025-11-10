@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Detector - Among Us Style</title>
+    <link rel="icon" type="image/png" href="assets/ai-icon.png">
     <style>
         * {
             margin: 0;
@@ -28,6 +29,20 @@
             font-size: 42px;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
             animation: glow 2s infinite;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h1 img {
+            width: 50px;
+            height: 50px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         @keyframes glow {
@@ -92,7 +107,7 @@
     </style>
 </head>
 <body>
-    <h1>🕵️ AI DETECTOR 🤖</h1>
+    <h1>🕵️ AI DETECTOR <img src="assets/ai-icon.png" alt="AI"></h1>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     <div class="info">
         <h2>🎮 How to Play?</h2>
